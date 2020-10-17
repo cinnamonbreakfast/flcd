@@ -24,6 +24,8 @@ class HashTable:
         '''
         index = self.hash(key)
 
+        if(self._array[index])
+
         self._array[index].append([key, value])
 
     def get(self, key):
