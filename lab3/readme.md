@@ -1,6 +1,7 @@
 input:
 
-```entry {
+```
+entry {
     int number;
 
     number = 3;
