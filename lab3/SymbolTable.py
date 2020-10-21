@@ -9,3 +9,6 @@ class SymbolTable:
 
     def add(self, key, value):
         return self._ht.add(key, value)
+
+    def __str__(self):
+        return str(self._ht)

@@ -24,9 +24,12 @@ class HashTable:
         '''
         index = self.hash(key)
 
-        if(self._array[index])
+        if [key, value] in self._array[index]:
+            raise ValueError()
 
         self._array[index].append([key, value])
+        
+        return self.get_pos(key)
 
     def get(self, key):
         '''
@@ -43,6 +46,20 @@ class HashTable:
             for pair in self._array[index]:
                 if pair[0] == key:
                     return pair[1]
+
+            raise KeyError("2")
+
+    def get_pos(self, key):
+        index = self.hash(key)
+
+        if len(self._array[index]) == 0:
+            raise KeyError("1")
+        else:
+            pos = 0
+            while pos < len(self._array[index]):
+                if self._array[index][pos][0] == key:
+                    return pos
+                pos += 1
 
             raise KeyError("2")
 
@@ -73,20 +90,19 @@ def test():
     a = "abc"
     b = "bac"
 
-    ht.add(a, 12)
-    ht.add(b, 32)
-    ht.add("5", 44)
+    print(ht.add(a, 12))
+    print(ht.add(b, 32))
+    print(ht.add("5", 44))
 
-    print(ht.get("abc"), " expects 12")
-    print(ht.get(a), " expects 12")
-
-    print(ht.get("bac"), " expects 32")
-    print(ht.get(b), " expects 32")
-
-    print(ht.get("5"), " expects 44")
-
-    ht.remove(a, 12)
+    # print(ht.get("abc"), " expects 12")
+    # print(ht.get(a), " expects 12")
+    #
+    # print(ht.get("bac"), " expects 32")
+    # print(ht.get(b), " expects 32")
+    #
+    # print(ht.get("5"), " expects 44")
+    # print(ht.get_pos("5"), " expects 44")
 
     print(ht)
 
-test()
+# test()
