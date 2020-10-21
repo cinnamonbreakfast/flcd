@@ -1,0 +1,9 @@
+entry {
+    int number;
+
+    number = 3;
+
+    if(number > 5) {
+        WRITE("SARMALE");
+    }
+}
