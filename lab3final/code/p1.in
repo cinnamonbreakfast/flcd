@@ -1,0 +1,9 @@
+entry {
+    int number;
+
+    +number = -0;
+
+    if(number < 5) {
+        WRITE("RANDOMSTRING);
+    }
+}
