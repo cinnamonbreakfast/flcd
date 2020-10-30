@@ -1,6 +1,7 @@
 input:
 
-`entry {
+```
+entry {
     int number;
 
     number = 3;
@@ -8,16 +9,18 @@ input:
     if(number > 5) {
         WRITE("SARMALE");
     }
-}`
+}
+```
 
 ST is:
-`[]
+```[]
 [['number', 0], ['3', 0]]
 []
-[['5', 0], ['SARMALE', 0]]`
+[['5', 0], ['SARMALE', 0]]
+```
 
 PIF is:
-`('entry', 0)
+```('entry', 0)
 ('{', 0)
 ('int', 0)
 ('number', 0)
@@ -39,5 +42,6 @@ PIF is:
 (')', 0)
 (';', 0)
 ('}', 0)
-('}', 0)`
+('}', 0)
+```
 
