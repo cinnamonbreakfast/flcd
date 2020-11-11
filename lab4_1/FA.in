@@ -1,5 +1,7 @@
 #states
 a, b, c
+#initial
+a
 #alpha
 0, 1
 #trans
