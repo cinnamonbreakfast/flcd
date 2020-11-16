@@ -1,0 +1,8 @@
+entry {
+    int number;
+    number = 0
+
+    if(number > 0) {
+        WRITE('TEST)
+    }
+}

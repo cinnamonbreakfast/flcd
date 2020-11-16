@@ -1,0 +1,13 @@
+#states
+a, b, c
+#initial
+a
+#alpha
+0, 1
+#trans
+a, 0, b
+b, 0, b
+b, 1, b
+b, 1, c
+#final
+c
