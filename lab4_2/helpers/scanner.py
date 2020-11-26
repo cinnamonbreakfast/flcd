@@ -38,6 +38,14 @@ def isPartOfOperator(char):
 def getOperatorToken(line, index):
     token = ''
 
+    try:
+        num = int(line[index:])
+        token +=line
+        index += 1
+        return token, index
+    except:
+        pass
+
     while index < len(line) and isPartOfOperator(line[index]):
         token += line[index]
         index += 1
@@ -53,6 +61,7 @@ def tokenize(line):
         if isPartOfOperator(line[index]):
             if token:
                 tokens.append(token)
+
             token, index = getOperatorToken(line, index)
             tokens.append(token)
             token = ''

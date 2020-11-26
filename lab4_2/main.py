@@ -15,10 +15,6 @@ if __name__ == "__main__":
     FA_ident = FiniteAutomataState('data/identifier')
     FA_const = FiniteAutomataState('data/constant')
 
-    print(res_words)
-    print(seps)
-    print(ops)
-
     input_code = input("read from: ")
     prog_in = open(input_code, 'r')
 

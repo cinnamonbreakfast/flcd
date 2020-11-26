@@ -11,7 +11,7 @@ class FiniteAutomataState:
         self._file = open(structure, "r")
 
         self._load()
-        print(self.validate())
+        # print(self.validate())
 
     def _load(self):
         reading = "none"
@@ -52,9 +52,11 @@ class FiniteAutomataState:
     def validate(self):
         if self.initial[0] not in self.states:
             return False
+
         for final in self.finals:
             if final not in self.states:
                 return False
+
         for key in self.transitions.keys():
             state = key[0]
             symbol = key[1]
@@ -74,6 +76,7 @@ class FiniteAutomataState:
     def accepted(self, sequence):
         if self.dfa():
             crt = self.initial[0]
+
             for symbol in sequence:
                 if (crt, symbol) in self.transitions.keys():
                     crt = self.transitions[(crt, symbol)][0]
