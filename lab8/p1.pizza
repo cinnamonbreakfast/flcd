@@ -1,7 +1,7 @@
 🧠 {
     int number;
 
-    number = 3;
+    number = +0;
 
     if(number > 5) {
         📣("abds);
