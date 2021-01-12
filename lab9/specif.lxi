@@ -1,0 +1,90 @@
+%{ 	 
+#include <stdio.h>
+#include <string.h>
+#include "y.tab.h"
+int lines = 0;
+%} 
+
+%option noyywrap
+%option caseless
+
+DIGIT 		[0-9]
+WORD		\"[a-zA-Z0-9]*\"
+NUMBER		[+-]?[1-9][0-9]*|0$
+CHARACTER 	\'[a-zA-Z0-9]\'
+CONST		{WORD}|{NUMBER}|{CHARACTER}
+ID 		[a-zA-Z][a-zA-Z0-9_]*
+
+%%
+
+array            {    printf("Reserved word: %s\n", yytext);   return ARRAY;     }
+map              {    printf("Reserved word: %s\n", yytext);   return MAP;     }
+const            {    printf("Reserved word: %s\n", yytext);   return CONST;     }
+do               {    printf("Reserved word: %s\n", yytext);   return DO;     }
+else             {    printf("Reserved word: %s\n", yytext);   return ELSE;     }
+if               {    printf("Reserved word: %s\n", yytext);   return IF;     }
+int              {    printf("Reserved word: %s\n", yytext);   return INT;     }
+number              {    printf("Reserved word: %s\n", yytext);   return number;     }
+elif             {    printf("Reserved word: %s\n", yytext);   return ELIF;     }
+while            {    printf("Reserved word: %s\n", yytext);   return WHILE;     }
+for              {    printf("Reserved word: %s\n", yytext);   return FOR;     }
+range            {    printf("Reserved word: %s\n", yytext);   return RANGE;     }
+class            {    printf("Reserved word: %s\n", yytext);   return CLASS;     }
+struct           {    printf("Reserved word: %s\n", yytext);   return STRUCT;     }
+string           {    printf("Reserved word: %s\n", yytext);   return STRING;     }
+float            {    printf("Reserved word: %s\n", yytext);   return FLOAT;     }
+char             {    printf("Reserved word: %s\n", yytext);   return CHAR;     }
+boolean          {    printf("Reserved word: %s\n", yytext);   return BOOLEAN;     }
+READ             {    printf("Reserved word: %s\n", yytext);   return READ;     }
+WRITE            {    printf("Reserved word: %s\n", yytext);   return WRITE;     }
+📣               {    printf("Reserved word: %s\n", yytext);   return EMOJI_PRINT;     }
+return           {    printf("Reserved word: %s\n", yytext);   return RETURN;     }
+fun              {    printf("Reserved word: %s\n", yytext);   return FUN;     }
+key              {    printf("Reserved word: %s\n", yytext);   return KEY;     }
+value            {    printf("Reserved word: %s\n", yytext);   return VALUE;     }
+main             {    printf("Reserved word: %s\n", yytext);   return MAIN;     }
+entry            {    printf("Reserved word: %s\n", yytext);   return ENTRY;     }
+🧠               {    printf("Reserved word: %s\n", yytext);   return EMOJI_ENTRY_POINT;     }
+
+{ID}	{printf( "Identifier: %s\n", yytext ); return ID; }
+
+{CONST}	{printf( "Constant: %s\n", yytext ); return CONST; }
+
+":"	    {printf( "Separator: %s\n", yytext );   return COLON;    }
+";"	    {printf( "Separator: %s\n", yytext );   return SEMICOLON;    }
+","	    {printf( "Separator: %s\n", yytext );   return COMMA;    }
+"."	    {printf( "Separator: %s\n", yytext );   return PERIOD;    }
+"{"	    {printf( "Separator: %s\n", yytext );   return CURLY_LEFT;    }
+"}"	    {printf( "Separator: %s\n", yytext );   return CURLY_RIGHT;    }
+"("	    {printf( "Separator: %s\n", yytext );   return ROUND_LEFT;    }
+")"	    {printf( "Separator: %s\n", yytext );   return ROUND_RIGHT;    }
+"["	    {printf( "Separator: %s\n", yytext );   return SQUARE_LEFT;    }
+"]"	    {printf( "Separator: %s\n", yytext );   return SQUARE_RIGHT;    }
+"+"	    {printf( "Operator: %s\n", yytext );    return PLUS;    }
+"-"	    {printf( "Operator: %s\n", yytext );    return MINUS;    }
+"*"	    {printf( "Operator: %s\n", yytext );    return MUL;    }
+"/"	    {printf( "Operator: %s\n", yytext );    return DIV;    }
+"<"	    {printf( "Operator: %s\n", yytext );    return LESS;    }
+">"	    {printf( "Operator: %s\n", yytext );    return GREATER;    }
+"<="	{printf( "Operator: %s\n", yytext );    return LESS_EQ;    }
+">="	{printf( "Operator: %s\n", yytext );    return GREATER_EQ;    }
+"!="	{printf( "Operator: %s\n", yytext );    return NOT_EQ;    }
+"=="	{printf( "Operator: %s\n", yytext );    return BOOL_EQ;    }
+"="     {printf( "Operator: %s\n", yytext );    return EQUAL;    }
+"!"	    {printf( "Operator: %s\n", yytext );    return EXCLAM;    }
+"?"	    {printf( "Operator: %s\n", yytext );    return QUESTION;    }
+"==="	{printf( "Operator: %s\n", yytext );    return STRING_EQ;    }
+"&&"	{printf( "Operator: %s\n", yytext );    return AND;    }
+"||"	{printf( "Operator: %s\n", yytext );    return OR;    }
+
+
+[ \t]+  	{}
+[\n]+ {lines++;}
+		 
+[+-]?0[0-9]* {printf("Illegal constant at line %d 🙄\n", lines); return -1; }
+
+[0-9~@#$%^][a-zA-Z0-9]	{printf("Illegal identifier at line %d 😠\n", lines); return -1; }
+
+\"[a-zA-Z0-9] {printf("Aoleu 😯 expected end of string on line %d\n", lines); return -1; }
+
+%%  
