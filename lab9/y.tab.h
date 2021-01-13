@@ -52,55 +52,54 @@ extern int yydebug;
     ELSE = 262,
     IF = 263,
     INT = 264,
-    NUMBER = 265,
-    ELIF = 266,
-    WHILE = 267,
-    FOR = 268,
-    RANGE = 269,
-    CLASS = 270,
-    STRUCT = 271,
-    STRING = 272,
-    FLOAT = 273,
-    CHAR = 274,
-    BOOLEAN = 275,
-    READ = 276,
-    WRITE = 277,
-    EMOJI_PRINT = 278,
-    RETURN = 279,
-    FUN = 280,
-    KEY = 281,
-    VALUE = 282,
-    MAIN = 283,
-    ENTRY = 284,
-    EMOJI_ENTRY_POINT = 285,
-    ID = 286,
-    CONST = 287,
-    COLON = 288,
-    SEMICOLON = 289,
-    COMMA = 290,
-    PERIOD = 291,
-    CURLY_LEFT = 292,
-    CURLY_RIGHT = 293,
-    ROUND_LEFT = 294,
-    ROUND_RIGHT = 295,
-    SQUARE_LEFT = 296,
-    SQUARE_RIGHT = 297,
-    PLUS = 298,
-    MINUS = 299,
-    MUL = 300,
-    DIV = 301,
-    LESS = 302,
-    GREATER = 303,
-    LESS_EQ = 304,
-    GREATER_EQ = 305,
-    NOT_EQ = 306,
-    BOOL_EQ = 307,
-    EQUAL = 308,
-    EXCLAM = 309,
-    QUESTION = 310,
-    STRING_EQ = 311,
-    AND = 312,
-    OR = 313
+    ELIF = 265,
+    WHILE = 266,
+    FOR = 267,
+    RANGE = 268,
+    CLASS = 269,
+    STRUCT = 270,
+    STRING = 271,
+    FLOAT = 272,
+    CHAR = 273,
+    BOOLEAN = 274,
+    READ = 275,
+    WRITE = 276,
+    EMOJI_PRINT = 277,
+    RETURN = 278,
+    FUN = 279,
+    KEY = 280,
+    VALUE = 281,
+    MAIN = 282,
+    ENTRY = 283,
+    EMOJI_ENTRY_POINT = 284,
+    ID = 285,
+    CONST = 286,
+    COLON = 287,
+    SEMICOLON = 288,
+    COMMA = 289,
+    PERIOD = 290,
+    CURLY_LEFT = 291,
+    CURLY_RIGHT = 292,
+    ROUND_LEFT = 293,
+    ROUND_RIGHT = 294,
+    SQUARE_LEFT = 295,
+    SQUARE_RIGHT = 296,
+    PLUS = 297,
+    MINUS = 298,
+    MUL = 299,
+    DIV = 300,
+    LESS = 301,
+    GREATER = 302,
+    LESS_EQ = 303,
+    GREATER_EQ = 304,
+    NOT_EQ = 305,
+    BOOL_EQ = 306,
+    EQUAL = 307,
+    EXCLAM = 308,
+    QUESTION = 309,
+    STRING_EQ = 310,
+    AND = 311,
+    OR = 312
   };
 #endif
 /* Tokens.  */
@@ -111,55 +110,54 @@ extern int yydebug;
 #define ELSE 262
 #define IF 263
 #define INT 264
-#define NUMBER 265
-#define ELIF 266
-#define WHILE 267
-#define FOR 268
-#define RANGE 269
-#define CLASS 270
-#define STRUCT 271
-#define STRING 272
-#define FLOAT 273
-#define CHAR 274
-#define BOOLEAN 275
-#define READ 276
-#define WRITE 277
-#define EMOJI_PRINT 278
-#define RETURN 279
-#define FUN 280
-#define KEY 281
-#define VALUE 282
-#define MAIN 283
-#define ENTRY 284
-#define EMOJI_ENTRY_POINT 285
-#define ID 286
-#define CONST 287
-#define COLON 288
-#define SEMICOLON 289
-#define COMMA 290
-#define PERIOD 291
-#define CURLY_LEFT 292
-#define CURLY_RIGHT 293
-#define ROUND_LEFT 294
-#define ROUND_RIGHT 295
-#define SQUARE_LEFT 296
-#define SQUARE_RIGHT 297
-#define PLUS 298
-#define MINUS 299
-#define MUL 300
-#define DIV 301
-#define LESS 302
-#define GREATER 303
-#define LESS_EQ 304
-#define GREATER_EQ 305
-#define NOT_EQ 306
-#define BOOL_EQ 307
-#define EQUAL 308
-#define EXCLAM 309
-#define QUESTION 310
-#define STRING_EQ 311
-#define AND 312
-#define OR 313
+#define ELIF 265
+#define WHILE 266
+#define FOR 267
+#define RANGE 268
+#define CLASS 269
+#define STRUCT 270
+#define STRING 271
+#define FLOAT 272
+#define CHAR 273
+#define BOOLEAN 274
+#define READ 275
+#define WRITE 276
+#define EMOJI_PRINT 277
+#define RETURN 278
+#define FUN 279
+#define KEY 280
+#define VALUE 281
+#define MAIN 282
+#define ENTRY 283
+#define EMOJI_ENTRY_POINT 284
+#define ID 285
+#define CONST 286
+#define COLON 287
+#define SEMICOLON 288
+#define COMMA 289
+#define PERIOD 290
+#define CURLY_LEFT 291
+#define CURLY_RIGHT 292
+#define ROUND_LEFT 293
+#define ROUND_RIGHT 294
+#define SQUARE_LEFT 295
+#define SQUARE_RIGHT 296
+#define PLUS 297
+#define MINUS 298
+#define MUL 299
+#define DIV 300
+#define LESS 301
+#define GREATER 302
+#define LESS_EQ 303
+#define GREATER_EQ 304
+#define NOT_EQ 305
+#define BOOL_EQ 306
+#define EQUAL 307
+#define EXCLAM 308
+#define QUESTION 309
+#define STRING_EQ 310
+#define AND 311
+#define OR 312
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

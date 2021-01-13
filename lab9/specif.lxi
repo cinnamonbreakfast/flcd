@@ -24,7 +24,6 @@ do               {    printf("Reserved word: %s\n", yytext);   return DO;     }
 else             {    printf("Reserved word: %s\n", yytext);   return ELSE;     }
 if               {    printf("Reserved word: %s\n", yytext);   return IF;     }
 int              {    printf("Reserved word: %s\n", yytext);   return INT;     }
-number              {    printf("Reserved word: %s\n", yytext);   return number;     }
 elif             {    printf("Reserved word: %s\n", yytext);   return ELIF;     }
 while            {    printf("Reserved word: %s\n", yytext);   return WHILE;     }
 for              {    printf("Reserved word: %s\n", yytext);   return FOR;     }

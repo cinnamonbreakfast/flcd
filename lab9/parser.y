@@ -12,7 +12,6 @@
 %token ELSE
 %token IF
 %token INT
-%token NUMBER
 %token ELIF
 %token WHILE
 %token FOR
@@ -70,7 +69,7 @@
 %%
 program : ENTRY cmpstmt | EMOJI_ENTRY_POINT cmpstmt;
 declaration : type ID;
-type : NUMBER | STRING | FLOAT | CHAR | BOOLEAN | INT;
+type : STRING | FLOAT | CHAR | BOOLEAN | INT;
 /* array : None | ARRAY SQUARE_LEFT CONST SQUARE_RIGHT; */
 cmpstmt : CURLY_LEFT stmtlist CURLY_RIGHT;
 stmtlist : stmt stmtTemp;
@@ -81,14 +80,14 @@ structstmt : cmpstmt | ifstmt | whilestmt | forstmt;
 ifstmt : IF ROUND_LEFT boolean_condition ROUND_RIGHT cmpstmt tempIf;
 tempIf : /*None*/ | ELSE cmpstmt;
 forstmt : FOR forheader cmpstmt;
-forheader : ROUND_LEFT NUMBER assignstmt SEMICOLON boolean_condition SEMICOLON assignstmt ROUND_RIGHT;
+forheader : ROUND_LEFT INT assignstmt SEMICOLON boolean_condition SEMICOLON assignstmt ROUND_RIGHT;
 whilestmt : WHILE ROUND_LEFT boolean_condition ROUND_RIGHT cmpstmt;
 assignstmt : ID EQUAL expression;
 expression : term2 term1;
 term1 : MUL term2 term1 | DIV term2 term1 | /*None*/
 term2 : ROUND_LEFT expression ROUND_RIGHT | CONST | ID | index ;
 index : ID SQUARE_LEFT CONST SQUARE_RIGHT ;
-iostmt : READ ROUND_LEFT STRING ROUND_RIGHT | WRITE ROUND_LEFT STRING ROUND_RIGHT | EMOJI_PRINT ROUND_LEFT STRING ROUND_RIGHT;
+iostmt : READ ROUND_LEFT STRING ROUND_RIGHT | WRITE ROUND_LEFT STRING ROUND_RIGHT | EMOJI_PRINT ROUND_LEFT ID ROUND_RIGHT;
 condition :     expression GREATER expression |
                 expression GREATER_EQ expression |
                 expression LESS expression |
